@@ -1,7 +1,7 @@
-import { Home, Footprints, UtensilsCrossed, Star, MessageCircle, Target, Video } from 'lucide-react';
+import { Home, Footprints, UtensilsCrossed, Star, MessageCircle, Target, Video, Stethoscope } from 'lucide-react';
 import { useLang } from '../contexts/LanguageContext';
 
-export type Screen = 'home' | 'steps' | 'weight' | 'nutrition' | 'points' | 'chat' | 'goals' | 'videos';
+export type Screen = 'home' | 'steps' | 'weight' | 'nutrition' | 'points' | 'chat' | 'goals' | 'videos' | 'checkups';
 
 interface Props {
   active: Screen;
@@ -12,13 +12,14 @@ export default function BottomNav({ active, onNavigate }: Props) {
   const { t } = useLang();
 
   const items: { id: Screen; icon: React.ReactNode; label: string }[] = [
-    { id: 'home', icon: <Home size={20} />, label: t.home },
-    { id: 'steps', icon: <Footprints size={20} />, label: t.steps },
-    { id: 'goals', icon: <Target size={20} />, label: t.goalsNav },
-    { id: 'nutrition', icon: <UtensilsCrossed size={20} />, label: t.nutrition },
-    { id: 'points', icon: <Star size={20} />, label: t.points },
-    { id: 'videos', icon: <Video size={20} />, label: t.videosNav },
-    { id: 'chat', icon: <MessageCircle size={20} />, label: t.chat },
+    { id: 'home', icon: <Home size={18} />, label: t.home },
+    { id: 'steps', icon: <Footprints size={18} />, label: t.steps },
+    { id: 'checkups', icon: <Stethoscope size={18} />, label: t.checkupsNav },
+    { id: 'nutrition', icon: <UtensilsCrossed size={18} />, label: t.nutrition },
+    { id: 'points', icon: <Star size={18} />, label: t.points },
+    { id: 'goals', icon: <Target size={18} />, label: t.goalsNav },
+    { id: 'videos', icon: <Video size={18} />, label: t.videosNav },
+    { id: 'chat', icon: <MessageCircle size={18} />, label: t.chat },
   ];
 
   return (

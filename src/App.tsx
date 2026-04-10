@@ -13,6 +13,7 @@ import PointsScreen from './screens/PointsScreen';
 import ChatScreen from './screens/ChatScreen';
 import GoalsScreen from './screens/GoalsScreen';
 import VideosScreen from './screens/VideosScreen';
+import CheckupsScreen from './screens/CheckupsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import AdminApp from './admin/AdminApp';
 import SysAdminApp from './sysadmin/SysAdminApp';
@@ -49,6 +50,7 @@ function AppInner() {
     chat: t.chatTitle,
     goals: t.goalsTitle,
     videos: t.videosTitle,
+    checkups: t.checkupsTitle,
   };
 
   return (
@@ -63,6 +65,7 @@ function AppInner() {
         {screen === 'chat' && <ChatScreen />}
         {screen === 'goals' && <GoalsScreen />}
         {screen === 'videos' && <VideosScreen />}
+        {screen === 'checkups' && <CheckupsScreen />}
       </main>
       <BottomNav active={screen} onNavigate={setScreen} />
     </div>
