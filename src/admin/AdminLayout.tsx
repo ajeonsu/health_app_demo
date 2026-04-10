@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLang } from '../contexts/LanguageContext';
 import {
   LayoutDashboard, Activity, ClipboardList, Heart,
-  FileSpreadsheet, Star, LogOut, Menu, X, Building2,
+  FileSpreadsheet, Star, LogOut, Menu, Building2,
 } from 'lucide-react';
 
 export type AdminScreen =

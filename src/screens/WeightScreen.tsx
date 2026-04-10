@@ -210,7 +210,7 @@ export default function WeightScreen() {
             <YAxis domain={yDomain} tick={{ fontSize: 10, fill: '#9ca3af' }} axisLine={false} tickLine={false} width={32} />
             <Tooltip
               contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none', boxShadow: '0 4px 16px rgba(0,0,0,0.12)' }}
-              formatter={(val: number) => [`${val} kg`, '']}
+              formatter={(val: unknown) => [`${val} kg`, '']}
             />
             <ReferenceLine y={targetWeight} stroke="#6366f1" strokeDasharray="4 4" strokeWidth={1.5}
               label={{ value: `${lang === 'ja' ? '目標' : 'Target'} ${targetWeight}kg`, position: 'right', fontSize: 10, fill: '#6366f1' }}

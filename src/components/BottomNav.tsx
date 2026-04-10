@@ -1,4 +1,4 @@
-import { Home, Footprints, Scale, UtensilsCrossed, Star, MessageCircle, Target, Video } from 'lucide-react';
+import { Home, Footprints, UtensilsCrossed, Star, MessageCircle, Target, Video } from 'lucide-react';
 import { useLang } from '../contexts/LanguageContext';
 
 export type Screen = 'home' | 'steps' | 'weight' | 'nutrition' | 'points' | 'chat' | 'goals' | 'videos';

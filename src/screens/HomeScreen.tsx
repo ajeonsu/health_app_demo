@@ -1,5 +1,5 @@
 import { useLang } from '../contexts/LanguageContext';
-import { Footprints, Scale, UtensilsCrossed, Star, Bell, Flame, Trophy, TrendingUp, Target, Video } from 'lucide-react';
+import { Footprints, Scale, UtensilsCrossed, Bell, Flame, Trophy, TrendingUp, Target, Video } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 type Screen = 'home' | 'steps' | 'weight' | 'nutrition' | 'points' | 'chat' | 'goals' | 'videos';
@@ -22,7 +22,7 @@ export default function HomeScreen({ onNavigate }: Props) {
   ];
 
   const summaryCards = [
-    { icon: <Footprints size={20} color="#6366f1" />, label: t.stepsToday, value: '8,432', sub: t.steps, bg: '#eef2ff' },
+    { icon: <Footprints size={20} color="#6366f1" />, label: t.stepsToday, value: '8,432', sub: t.stepsUnit, bg: '#eef2ff' },
     { icon: <Flame size={20} color="#f97316" />, label: t.calories, value: '1,840', sub: t.kcal, bg: '#fff7ed' },
     { icon: <Trophy size={20} color="#eab308" />, label: t.totalPoints, value: '2,150', sub: t.pts, bg: '#fefce8' },
     { icon: <TrendingUp size={20} color="#22c55e" />, label: t.healthScore, value: '82', sub: '/ 100', bg: '#f0fdf4' },
@@ -115,7 +115,7 @@ export default function HomeScreen({ onNavigate }: Props) {
               <YAxis hide />
               <Tooltip
                 contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none', boxShadow: '0 4px 16px rgba(0,0,0,0.12)' }}
-                formatter={(val: number) => [`${val.toLocaleString()} steps`, '']}
+                formatter={(val: unknown) => [`${(val as number).toLocaleString()} steps`, '']}
               />
               <Bar dataKey="steps" fill="#6366f1" radius={[6, 6, 0, 0]} />
             </BarChart>

@@ -104,7 +104,7 @@ export default function StepsScreen() {
       {/* Daily Goal */}
       <div style={{ background: 'linear-gradient(135deg, #eef2ff, #e0e7ff)', borderRadius: 16, padding: '14px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
         <span style={{ fontSize: 14, fontWeight: 600, color: '#4338ca' }}>{t.dailyGoal}</span>
-        <span style={{ fontSize: 18, fontWeight: 800, color: '#4338ca' }}>{dailyGoal.toLocaleString()} {t.steps}</span>
+        <span style={{ fontSize: 18, fontWeight: 800, color: '#4338ca' }}>{dailyGoal.toLocaleString()} {t.stepsUnit}</span>
       </div>
 
       {/* Stats Row */}
@@ -228,7 +228,7 @@ export default function StepsScreen() {
               <BarChart data={currentWeekData} barSize={20}>
                 <XAxis dataKey="day" tick={{ fontSize: 11, fill: '#9ca3af' }} axisLine={false} tickLine={false} />
                 <YAxis hide />
-                <Tooltip contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none', boxShadow: '0 4px 16px rgba(0,0,0,0.12)' }} formatter={(val: number) => [`${val.toLocaleString()}`, t.steps]} />
+                <Tooltip contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none', boxShadow: '0 4px 16px rgba(0,0,0,0.12)' }} formatter={(val: unknown) => [`${(val as number).toLocaleString()}`, t.stepsUnit]} />
                 <Bar dataKey="steps" radius={[6, 6, 0, 0]}>
                   {currentWeekData.map((_, index) => (
                     <Cell key={index} fill={index === currentWeekData.length - 1 ? '#6366f1' : '#c7d2fe'} />
@@ -252,7 +252,7 @@ export default function StepsScreen() {
               ]}>
                 <XAxis dataKey="h" tick={{ fontSize: 10, fill: '#9ca3af' }} axisLine={false} tickLine={false} />
                 <YAxis hide />
-                <Tooltip contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none' }} formatter={(val: number) => [`${val}`, t.steps]} />
+                <Tooltip contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none' }} formatter={(val: unknown) => [`${val}`, t.stepsUnit]} />
                 <Bar dataKey="s" fill="#6366f1" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
@@ -266,7 +266,7 @@ export default function StepsScreen() {
               <LineChart data={monthData}>
                 <XAxis dataKey="day" tick={{ fontSize: 10, fill: '#9ca3af' }} axisLine={false} tickLine={false} interval={2} />
                 <YAxis hide />
-                <Tooltip contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none' }} formatter={(val: number) => [`${val.toLocaleString()}`, t.steps]} />
+                <Tooltip contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none' }} formatter={(val: unknown) => [`${(val as number).toLocaleString()}`, t.stepsUnit]} />
                 <Line type="monotone" dataKey="steps" stroke="#6366f1" strokeWidth={2.5} dot={{ fill: '#6366f1', r: 3 }} activeDot={{ r: 5 }} />
               </LineChart>
             </ResponsiveContainer>

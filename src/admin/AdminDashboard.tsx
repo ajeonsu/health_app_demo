@@ -100,7 +100,7 @@ export default function AdminDashboard() {
               <Pie data={riskData} cx="50%" cy="50%" innerRadius={40} outerRadius={65} paddingAngle={3} dataKey="value">
                 {riskData.map((entry, i) => <Cell key={i} fill={entry.color} />)}
               </Pie>
-              <Tooltip formatter={(val: number) => [`${val}%`, '']} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
+              <Tooltip formatter={(val: unknown) => [`${val}%`, '']} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
             </PieChart>
           </ResponsiveContainer>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginTop: 8 }}>
@@ -123,7 +123,7 @@ export default function AdminDashboard() {
             <BarChart data={deptData} layout="vertical" barSize={14}>
               <XAxis type="number" tick={{ fontSize: 11, fill: '#9ca3af' }} axisLine={false} tickLine={false} domain={[0, 100]} />
               <YAxis type="category" dataKey={lang === 'ja' ? 'deptJa' : 'dept'} tick={{ fontSize: 12, fill: '#374151' }} axisLine={false} tickLine={false} width={60} />
-              <Tooltip contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none' }} formatter={(val: number) => [`${val}`, t.avgHealthScore]} />
+              <Tooltip contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none' }} formatter={(val: unknown) => [`${val}`, t.avgHealthScore]} />
               <Bar dataKey="avg" fill="#3b82f6" radius={[0, 6, 6, 0]} />
             </BarChart>
           </ResponsiveContainer>

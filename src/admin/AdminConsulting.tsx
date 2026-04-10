@@ -88,7 +88,7 @@ export default function AdminConsulting() {
           <BarChart data={chartData} barGap={4}>
             <XAxis dataKey="name" tick={{ fontSize: 11, fill: '#374151' }} axisLine={false} tickLine={false} />
             <YAxis tick={{ fontSize: 11, fill: '#9ca3af' }} axisLine={false} tickLine={false} />
-            <Tooltip contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none' }} formatter={(val: number) => [`¥${val}万`, '']} />
+            <Tooltip contentStyle={{ borderRadius: 10, fontSize: 12, border: 'none' }} formatter={(val: unknown) => [`¥${val}万`, '']} />
             <Legend wrapperStyle={{ fontSize: 12 }} />
             <Bar dataKey={t.budgetPlan} fill="#3b82f6" radius={[4, 4, 0, 0]} />
             <Bar dataKey={t.actual} fill="#10b981" radius={[4, 4, 0, 0]} />

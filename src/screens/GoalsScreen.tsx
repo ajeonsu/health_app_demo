@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLang } from '../contexts/LanguageContext';
-import { Target, Footprints, Scale, Flame, Clock, Plus, CheckCircle2, Edit2 } from 'lucide-react';
+import { Footprints, Scale, Flame, Clock, Plus, CheckCircle2, Edit2 } from 'lucide-react';
 
 interface Goal {
   id: number;

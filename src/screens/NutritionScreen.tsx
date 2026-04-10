@@ -102,7 +102,7 @@ export default function NutritionScreen() {
               <Pie data={macroData} cx="50%" cy="50%" innerRadius={30} outerRadius={50} paddingAngle={2} dataKey="value">
                 {macroData.map((entry, i) => <Cell key={i} fill={entry.color} />)}
               </Pie>
-              <Tooltip formatter={(val: number) => [`${val}g`, '']} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
+              <Tooltip formatter={(val: unknown) => [`${val}g`, '']} contentStyle={{ fontSize: 12, borderRadius: 8 }} />
             </PieChart>
           </ResponsiveContainer>
         </div>

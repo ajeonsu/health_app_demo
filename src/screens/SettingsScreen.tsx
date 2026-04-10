@@ -186,7 +186,7 @@ export default function SettingsScreen({ onLogout }: Props) {
       )}
 
       {/* Notifications */}
-      {section(t.notifications, <Bell size={14} color="#6b7280" />,
+      {section(t.notificationsSettings, <Bell size={14} color="#6b7280" />,
         <>
           {toggleItem(t.pushNotifs, true)}
           {toggleItem(t.emailNotifs, true)}
